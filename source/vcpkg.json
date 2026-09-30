@@ -1,0 +1,34 @@
+{
+  "name": "libzfork",
+  "version": "1.0.0",
+  "description": "Modern C++20 audio playback and processing library",
+  "dependencies": [
+    "mpg123",
+    "libvorbis",
+    "libogg",
+    "libflac",
+    "soundtouch",
+    "faad2",
+    "mp3lame",
+    "portaudio",
+    "opusfile",
+    {
+      "name": "wxwidgets",
+      "platform": "windows"
+    },
+    {
+      "name": "glew",
+      "platform": "windows"
+    },
+    "libjpeg-turbo",
+    "libpng",
+    "zlib",
+    "catch2",
+    {
+      "name": "imgui",
+      "features": ["win32-binding", "dx11-binding"],
+      "platform": "windows"
+    }
+  ],
+  "builtin-baseline": "522253caf47268c1724f486a035e927a42a90092"
+}

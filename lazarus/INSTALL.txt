@@ -1,0 +1,8 @@
+﻿# Lazarus Package (libZFork)
+
+Copyright (C) 2026 Matthias Stoltze
+https://solid-software.net
+
+Install: Package -> Open -> lazlibzfork.lpk -> Compile -> Use -> Install
+
+DLL: copy ../win-x64/Release/libZFork.dll (or Debug) next to your EXE.

@@ -1,0 +1,158 @@
+LIBRARY libZFork
+EXPORTS
+    ; ── C++ factory ────────────────────────────────────────────────────────────
+    CreateZFork             @1
+    DestroyZFork            @2
+
+    ; ── C API ──────────────────────────────────────────────────────────────────
+    zfork_Create            @10
+    zfork_Destroy           @11
+
+    zfork_OpenFile          @20
+    zfork_OpenFileA         @21
+    zfork_AddFile           @22
+    zfork_OpenStream        @23
+    zfork_Close             @24
+    zfork_RemoveQueueItem   @25
+    zfork_MoveQueueItem     @26
+    zfork_GetQueueCount     @27
+    zfork_GetQueueItemPathA @28
+
+    zfork_Play              @30
+    zfork_PlayLoop          @31
+    zfork_Pause             @32
+    zfork_Resume            @33
+    zfork_Stop              @34
+
+    zfork_SetMasterVolume   @40
+    zfork_GetMasterVolume   @41
+    zfork_SetRate           @42
+    zfork_SetPitch          @43
+    zfork_SetTempo          @44
+
+    zfork_EnableEqualizer   @50
+    zfork_SetEQBandGain     @51
+    zfork_EnableEcho        @52
+
+    zfork_GetFFTData        @60
+    zfork_DetectBPM         @61
+
+    zfork_GetError          @70
+    zfork_SetPlaylistAllowDuplicates @71
+    zfork_GetPlaylistAllowDuplicates @72
+    zfork_AnalyzeFile       @73
+    zfork_FreeAnalysis      @74
+    zfork_GetAnalysisSummary @75
+    zfork_CopyAnalysisWaveform @76
+    zfork_CopyAnalysisPeaks @77
+    zfork_StartBroadcast    @78
+    zfork_StopBroadcast     @79
+    zfork_PushBroadcastPCM  @80
+    zfork_StartBroadcastFile @81
+    zfork_AttachBroadcastToCurrentPlayback @82
+    zfork_GetBroadcastStats @83
+    zfork_GetBroadcastError @84
+    zfork_SetBroadcastMetadata @85
+    zfork_PushBroadcastMicPCM @86
+    zfork_SetBroadcastMicActive @87
+    zfork_SetBroadcastDucking @88
+    zfork_GetBroadcastDucking @89
+    zfork_StartBroadcastMicCapture @90
+    zfork_StopBroadcastMicCapture @91
+    zfork_LoadPlaylistFile @92
+    zfork_LoadPlaylistFileA @93
+    CreateZForkWithConfig @94
+    zfork_CreateWithConfig @95
+    zfork_SetPCMOutputCallback @96
+
+    ; ── Extended C API (Seek / Info / DSP / ID3) ───────────────────────────────
+    zfork_AddFileA              @180
+    zfork_SeekMs                @181
+    zfork_GetPositionMs         @182
+    zfork_GetStreamInfo         @183
+    zfork_GetStatus             @184
+    zfork_SetPlayerVolume       @185
+    zfork_GetPlayerVolume       @186
+    zfork_GetVUData             @187
+    zfork_MixChannels           @188
+    zfork_GetEQBandGain         @189
+    zfork_ResetEqualizer        @190
+    zfork_SetEchoParams         @191
+    zfork_GetEchoParams         @192
+    zfork_EnableVocalCut        @193
+    zfork_EnableSideCut         @194
+    zfork_EnableStereoEnhancer  @195
+    zfork_SetStereoWidth        @196
+    zfork_GetStereoWidth        @197
+    zfork_SetBufferSize         @198
+    zfork_DetectFileBPMA        @199
+    zfork_AnalyzeFileA          @200
+    zfork_StartBroadcastFileA   @201
+    zfork_LoadID3Ex             @202
+    zfork_LoadFileID3ExA        @203
+    zfork_LoadFileID3PictureA   @204
+    zfork_FreeMemory            @205
+    zfork_SetCallback           @206
+    zfork_EnumerateOutputDevices @207
+    zfork_GetOutputDeviceInfo   @208
+    zfork_SetOutputDevice       @209
+    zfork_LoadID3Picture        @210
+
+    ; ── C API v2 (libZFork2 — game audio engine) ───────────────────────────────
+    zfork2_CreateContext         @100
+    zfork2_DestroyContext        @101
+    zfork2_Start                 @102
+    zfork2_Stop                  @103
+    zfork2_RegisterGroup         @104
+    zfork2_GetGroup              @105
+    zfork2_SetCallback           @106
+    zfork2_Update                @107
+
+    zfork2_LoadSound             @110
+    zfork2_UnloadSound           @111
+
+    zfork2_PlaySound             @120
+    zfork2_StopVoice             @121
+    zfork2_PauseVoice            @122
+    zfork2_ResumeVoice           @123
+    zfork2_IsVoiceActive         @124
+    zfork2_SetVoiceVolume        @125
+    zfork2_SetVoicePan           @126
+    zfork2_SetVoicePitch         @127
+    zfork2_SetVoiceLoop          @128
+    zfork2_SetVoicePriority      @129
+    zfork2_SetVoicePosition2D    @130
+    zfork2_SetVoicePosition3D    @131
+    zfork2_SetVoiceMarker        @132
+    zfork2_ClearVoiceMarkers     @133
+    zfork2_SetVoiceTempo         @134
+
+    zfork2_SetGroupVolume        @140
+    zfork2_SetGroupMute          @141
+    zfork2_GetGroupLevels        @142
+
+    zfork2_SetListenerPosition2D @150
+    zfork2_SetListenerPosition3D @151
+    zfork2_SetListenerDirection  @152
+    zfork2_SetListenerRange      @153
+
+    zfork2_LoadBankV1            @160
+    zfork2_UnloadBankV1          @161
+    zfork2_PlayEventV1           @162
+    zfork2_PlayEventOnGroupV1    @163
+    zfork2_GetBankEntryCount     @164
+    zfork2_GetBankSkippedCount   @165
+    zfork2_ProbeFile             @166
+    zfork2_DetectFileBPM         @167
+    zfork2_CompileBankV1         @168
+    zfork2_SetSoundCacheBudget   @169
+    zfork2_GetSoundCacheBudget   @170
+    zfork2_GetSoundCacheStats    @171
+    zfork2_ClearSoundCache       @172
+    zfork2_GetOutputBackendInfo  @173
+    zfork2_CreateContextWithBackend @174
+    zfork2_SetGroupEcho          @175
+    zfork2_SetGroupReverb        @176
+    zfork2_ClearGroupEffect      @177
+    zfork2_CompileBankV1Embedded @178
+    zfork2_GetBankEventName      @179

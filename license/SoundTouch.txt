@@ -1,0 +1,10 @@
+﻿SoundTouch audio processing library
+Copyright (c) Olli Parviainen 2002-2024
+http://www.surina.net/soundtouch
+
+SoundTouch is licensed under the GNU Lesser General Public License
+version 2.1 (LGPL 2.1).
+
+The full LGPL 2.1 text is in this folder: LGPL.TXT
+
+Contact: oparviai at iki.fi

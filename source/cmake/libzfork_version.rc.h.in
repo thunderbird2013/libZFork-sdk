@@ -1,0 +1,7 @@
+/* Auto-generated from VERSION — included by src/libzfork.rc */
+#ifndef LIBZFORK_FILEVERSION
+#  define LIBZFORK_FILEVERSION @LIBZFORK_FILEVERSION@
+#endif
+#ifndef LIBZFORK_FILEVERSION_STR
+#  define LIBZFORK_FILEVERSION_STR "@LIBZFORK_FILEVERSION_STR@\0"
+#endif

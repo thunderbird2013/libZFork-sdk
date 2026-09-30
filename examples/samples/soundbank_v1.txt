@@ -1,0 +1,25 @@
+# Soundbank V1 format:
+# eventId;path;group;type;volume;pan;priority;loop
+#
+# type: predecoded  = komplett in RAM geladen (kurze Sounds)
+#       streaming   = von Disk gestreamt (lange Musik-Tracks)
+#
+# WICHTIG: Pfade sind RELATIV zu dieser .txt-Datei (nicht zum Arbeitsverzeichnis).
+#
+# OGG-Eintraege (nur wenn libZFork mit LIBZFORK_WITH_OGG kompiliert wurde):
+ui_click;sounds/button1.ogg;ui;predecoded;1.00;0.00;5;0
+button_on;sounds/on.ogg;ui;predecoded;0.95;0.00;5;0
+button_off;sounds/off.ogg;ui;predecoded;0.95;0.00;5;0
+complete;sounds/complete.ogg;ui;predecoded;1.00;0.00;5;0
+ambience_loop;dungeon_ambient_1.ogg;music;streaming;0.45;0.00;0;-1
+
+# WAV-Eintrag (immer verfuegbar, kein extra Codec nötig):
+menu_click_wav;Menu Selection Click.wav;ui;predecoded;1.00;0.00;5;0
+
+# Gruppen-Effekte (@echo / @reverb): werden beim Laden der Bank automatisch
+# auf die jeweilige Gruppe gelegt -- jede Voice auf dieser Gruppe läuft
+# automatisch mit durch (Bus-Effekt, nicht pro-Sound). Format:
+#   @echo;gruppe;leftDelayMs;leftSrcVol;leftEchoVol;rightDelayMs;rightSrcVol;rightEchoVol
+#   @reverb;gruppe;roomSize;damping;wet;dry
+@echo;ui;180;100;45;180;100;45
+@reverb;music;0.65;0.5;0.35;0.7

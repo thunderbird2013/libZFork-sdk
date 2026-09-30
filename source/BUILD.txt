@@ -1,0 +1,19 @@
+﻿libZFork â€” Corresponding Source (GPLv2)
+=======================================
+
+Copyright (C) 2026 Matthias Stoltze â€” https://solid-software.net
+
+Complete corresponding source for the binaries in this dist/ SDK tree.
+
+Use prebuilt binaries (no rebuild needed):
+  ../win-x64/Release/libZFork.dll   (Windows)
+  ../linux-x64/Release/libZFork.so* (Linux)
+  Headers: ../include/libzfork/
+
+Rebuild from this folder (needs vcpkg + VS Build Tools / WSL):
+  Windows:  .\build.ps1 -Config Release -Link Both -NoExamples -NoCopyDist -VcpkgRoot <pfad>
+  Linux:    bash scripts/wsl_build_variant.sh x64 Release
+
+Scripts resolve paths relative to this source tree (no hardcoded drive letters).
+Licenses: ../license/
+Version:  see VERSION in this folder.

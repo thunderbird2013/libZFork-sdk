@@ -1,0 +1,25 @@
+# ===================================================================================================
+# libZFork2 SoundBank V1 -- auto-generiert von zfork2_bank_builder
+# Quelle: H:/Devel/CPP/libZFork/examples/samples
+#
+# Konventionen: Gruppe = Unterordnername (Root-Dateien -> "sfx").
+#   Typ  = streaming ab 500 KiB oder Gruppe 'music'/'streaming', sonst predecoded.
+#   vol  = Lautstaerke 0.0-4.0 | pan = -1.0(L)..+1.0(R)
+#   prio = Prioritaet, hoeher gewinnt bei Voice-Knappheit
+#   loop = -1 endlos, 0 kein Loop, N = N-mal wiederholen
+# Diese Datei ist ein normaler Ausgangspunkt zum Nachbearbeiten.
+# ===================================================================================================
+
+# --- Gruppe: sfx (2 Sounds) ------------------------------------------------------------------------
+# eventId              ; path                     ; group  ; type       ;  vol ;  pan ; prio ; loop
+menu_selection_click ; Menu Selection Click.wav ; sfx    ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+dungeon_ambient_1    ; dungeon_ambient_1.ogg    ; sfx    ; streaming  ; 1.00 ; 0.00 ;    5 ;    0
+
+# --- Gruppe: sounds (5 Sounds) ---------------------------------------------------------------------
+# eventId              ; path                     ; group  ; type       ;  vol ;  pan ; prio ; loop
+button1              ; sounds/button1.ogg       ; sounds ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+button2              ; sounds/button2.ogg       ; sounds ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+complete             ; sounds/complete.ogg      ; sounds ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+off                  ; sounds/off.ogg           ; sounds ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+on                   ; sounds/on.ogg            ; sounds ; predecoded ; 1.00 ; 0.00 ;    5 ;    0
+

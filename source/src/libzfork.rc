@@ -1,0 +1,41 @@
+/* libZFork — Windows VERSIONINFO + Icon (Eigenschaften der DLL) */
+#include <winver.h>
+#include "libzfork_version.rc.h"
+
+/* Erstes Icon der DLL (Explorer / Resource-Viewer) */
+IDI_LIBZFORK ICON "libzfork.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION LIBZFORK_FILEVERSION
+ PRODUCTVERSION LIBZFORK_FILEVERSION
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_DLL
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        /* 0407 = Deutsch (Deutschland), 04B0 = Unicode */
+        BLOCK "040704B0"
+        BEGIN
+            VALUE "CompanyName",      "solid-software.net\0"
+            VALUE "FileDescription",  "libZFork Audio Engine\0"
+            VALUE "FileVersion",      LIBZFORK_FILEVERSION_STR
+            VALUE "InternalName",     "libZFork\0"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 Matthias Stoltze\0"
+            VALUE "OriginalFilename", "libZFork.dll\0"
+            VALUE "ProductName",      "libZFork\0"
+            VALUE "ProductVersion",   LIBZFORK_FILEVERSION_STR
+            VALUE "Comments",         "https://solid-software.net\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0407, 1200
+    END
+END

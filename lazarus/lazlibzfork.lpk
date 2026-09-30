@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <Name Value="lazlibzfork"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="Matthias Stoltze"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <SearchPaths>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="libZFork Lazarus: Player, Visuals, DJ/Radio (Deck/Mixer/Jog/BeatGrid/EQ), Playlist, Storyboard, Broadcast, AudioEngine. Copyright (C) 2026 Matthias Stoltze — https://solid-software.net"/>
+    <License Value="GPLv2 — Copyright (C) 2026 Matthias Stoltze — https://solid-software.net"/>
+    <Version Major="1" Minor="0" Release="0" Build="0"/>
+    <Files>
+      <Item>
+        <Filename Value="lazlibzfork.pas"/>
+        <UnitName Value="lazlibzfork"/>
+      </Item>
+      <Item>
+        <Filename Value="LibZFork.pas"/>
+        <UnitName Value="LibZFork"/>
+      </Item>
+      <Item>
+        <Filename Value="LibZFork2.pas"/>
+        <UnitName Value="LibZFork2"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkIntf.pas"/>
+        <UnitName Value="ZForkIntf"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkLicenses.pas"/>
+        <UnitName Value="ZForkLicenses"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkAbout.pas"/>
+        <UnitName Value="ZForkAbout"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkPlayer.pas"/>
+        <UnitName Value="ZForkPlayer"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkID3.pas"/>
+        <UnitName Value="ZForkID3"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkSpectrum.pas"/>
+        <UnitName Value="ZForkSpectrum"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkWaveform.pas"/>
+        <UnitName Value="ZForkWaveform"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkCrossfader.pas"/>
+        <UnitName Value="ZForkCrossfader"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkChannelStrip.pas"/>
+        <UnitName Value="ZForkChannelStrip"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkStoryboard.pas"/>
+        <UnitName Value="ZForkStoryboard"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkStoryAuto.pas"/>
+        <UnitName Value="ZForkStoryAuto"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkPlaylist.pas"/>
+        <UnitName Value="ZForkPlaylist"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkDeck.pas"/>
+        <UnitName Value="ZForkDeck"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkMixer.pas"/>
+        <UnitName Value="ZForkMixer"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkJogWheel.pas"/>
+        <UnitName Value="ZForkJogWheel"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkBeatGrid.pas"/>
+        <UnitName Value="ZForkBeatGrid"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkEQPanel.pas"/>
+        <UnitName Value="ZForkEQPanel"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkBroadcast.pas"/>
+        <UnitName Value="ZForkBroadcast"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkEngine.pas"/>
+        <UnitName Value="ZForkEngine"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkBank.pas"/>
+        <UnitName Value="ZForkBank"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkPropEdit.pas"/>
+        <UnitName Value="ZForkPropEdit"/>
+      </Item>
+      <Item>
+        <Filename Value="ZForkReg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="ZForkReg"/>
+      </Item>
+    </Files>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="IDEIntf"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
