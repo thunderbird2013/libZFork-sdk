@@ -168,18 +168,112 @@ Kurz: App + `libZFork.dll` + `license\` (+ Source-Angebot) = GPL-konforme Weiter
 
 ## Schnellstart
 
+> **C++** und **Pascal-Bindings** nutzen dieselbe DLL.  
+> **Visuelle Komponenten** (Player, Spectrum, Deck, …) gibt es **nur für Lazarus**.  
+> Unter `examples/` liegen viele **C++-Templates/Demos**; Lazarus-Demos unter `Lazarus/demo*`.
+
 ### C / C++
 
 ```c
 #include <libzfork/libzfork.h>
-/* Link: libZFork.lib  +  runtime: libZFork.dll */
+/* Link: libZFork.lib  —  Runtime: libZFork.dll neben die EXE */
 ```
 
-### Lazarus
+Beispiele: Ordner [`examples/`](examples/) (Player, EQ, Broadcast, zfork2, …).
 
-1. Package → Open → `lazarus/lazlibzfork.lpk` → Compile → Use → Install  
-2. Komponenten aus der Palette **libZFork** aufs Formular  
-3. `libZFork.dll` neben die gebaute EXE kopieren  
+### Lazarus — Komponenten (GUI)
+
+1. **Package → Open** → `lazarus/lazlibzfork.lpk` → **Compile** → **Use → Install**  
+2. Palette **libZFork** → Komponenten aufs Formular  
+3. `libZFork.dll` (x64) **neben die EXE** kopieren  
+
+### Lazarus / Free Pascal — Console **ohne** Komponenten (Bindings)
+
+Unit aus dem SDK: `bindings/pascal/libzfork.pas` (bzw. `Lazarus/LibZFork.pas`) zum Projekt hinzufügen.  
+`libZFork.dll` muss im Arbeitsverzeichnis / neben der EXE liegen.
+
+#### Beispiel 1 — Datei abspielen (Player-API)
+
+```pascal
+program PlayFile;
+{$mode objfpc}{$H+}
+uses
+  SysUtils, libzfork;
+
+var
+  H: TZFORK_HANDLE;
+  St: TStreamStatus;
+begin
+  H := zfork_Create;
+  if H = nil then
+  begin
+    WriteLn('zfork_Create fehlgeschlagen');
+    Halt(1);
+  end;
+
+  if not ZForkOpenFile(H, 'music.mp3') then
+  begin
+    WriteLn('Open: ', ZForkGetError(H));
+    zfork_Destroy(H);
+    Halt(1);
+  end;
+
+  if not ZForkPlay(H) then
+  begin
+    WriteLn('Play: ', ZForkGetError(H));
+    zfork_Destroy(H);
+    Halt(1);
+  end;
+
+  WriteLn('Playing — Strg+C zum Abbrechen');
+  repeat
+    Sleep(100);
+    FillChar(St, SizeOf(St), 0);
+    zfork_GetStatus(H, @St);
+  until not St.playing;
+
+  zfork_Destroy(H);
+end.
+```
+
+#### Beispiel 2 — Kurzsound über Engine (libZFork2)
+
+```pascal
+program PlaySfx;
+{$mode objfpc}{$H+}
+uses
+  SysUtils, libzfork2;
+
+var
+  Ctx: TZF2_CONTEXT;
+  Snd: TZF2_SOUND;
+  I: Integer;
+begin
+  Ctx := zfork2_CreateContext;
+  if Ctx = nil then Halt(1);
+
+  Snd := zfork2_LoadSound(Ctx, PWideChar(UnicodeString('click.wav')),
+                          ZF2_SOUND_PREDECODED);
+  if Snd = nil then
+  begin
+    WriteLn('LoadSound fehlgeschlagen');
+    zfork2_DestroyContext(Ctx);
+    Halt(1);
+  end;
+
+  zfork2_PlaySound(Ctx, Snd, nil);  { Gruppe nil = Default }
+  for I := 1 to 50 do
+  begin
+    zfork2_Update(Ctx);             { Mixer tick — in GUI: Timer }
+    Sleep(20);
+  end;
+
+  zfork2_UnloadSound(Snd);
+  zfork2_DestroyContext(Ctx);
+end.
+```
+
+`uses libzfork2;` → Datei `bindings/pascal/libzfork2.pas`.
 
 ### Download nur Binaries
 
